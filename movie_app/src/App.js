@@ -9,16 +9,24 @@ class App extends Component {
   }
 
   componentDidMount() {
-    Axios.get('https://yts.am/api/v2/list_movies.json?sort_by=rating')
-      .then(res => this.setState({movies: res.data.data.movies}))
+    Axios.get('https://yts.am/api/v2/list_movies.json?sort_by=download count')
+      .then(res => this.setState(res.data.data.movies))
   }
   _renderMovies = () => {
-    return this.state.movies.map((movie, index) => <Movie title={movie.title} poster={movie.medium_cover_image} key={index} />)
+    return this.state.map((movie, index) =>
+      <Movie
+        key={index}
+        title={movie.title_english}
+        poster={movie.medium_cover_image}
+        genres={movie.genres}
+        synopsis={movie.synopsis}
+      />)
   }
   render() {
+    const { movies } = this.state;
     return (
-      <div className="App">
-        {this.state.movies ? this._renderMovies() : 'loading'}
+      <div className={movies ? "App" : "App--loading"}>
+        {movies ? this._renderMovies() : 'Loading'}
       </div>
     )
   }
