@@ -9,11 +9,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    Axios.get('https://yts.am/api/v2/list_movies.json?sort_by=download count')
-      .then(res => this.setState(res.data.data.movies))
+    Axios.get('https://yts.am/api/v2/list_movies.json?sort_by=download_count')
+      .then(res => this.setState({ movies: res.data.data.movies }))
   }
   _renderMovies = () => {
-    return this.state.map((movie, index) =>
+    return this.state.movies.map((movie, index) =>
       <Movie
         key={index}
         title={movie.title_english}
