@@ -1,5 +1,4 @@
 import * as types from '../actions/ActionTypes';
-import { combineReducers } from '../../../../Library/Caches/typescript/3.4.5/node_modules/redux';
 
 const initialState = {
     counters: [
