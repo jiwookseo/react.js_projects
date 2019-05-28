@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Counter from './Counter'
+import CounterContainer from './CounterContainer'
 class App extends Component {
     state = {  }
     render() { 
         return ( 
             <div>
-                <Counter></Counter>
+                <CounterContainer></CounterContainer>
             </div>
          );
     }
