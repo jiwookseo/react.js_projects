@@ -1,4 +1,5 @@
 import * as types from '../actions/ActionTypes';
+import { combineReducers } from '../../../../Library/Caches/typescript/3.4.5/node_modules/redux';
 
 const initialState = {
     counters: [
@@ -10,7 +11,7 @@ const initialState = {
 }
 
 function counter(state = initialState, action) {
-    const { counters } = sate;
+    const { counters } = state;
     switch (action.type) {
         case types.CREATE:
             return {
@@ -68,3 +69,5 @@ function counter(state = initialState, action) {
             return state;
     }
 }
+
+export default counter;
