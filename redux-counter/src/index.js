@@ -7,9 +7,10 @@ import { createStore, applyMiddleware } from 'redux'
 import reducers from './modules';
 import { Provider } from 'react-redux';
 import { createLogger } from 'redux-logger';
+import ReduxThunk from 'redux-thunk';
 
 const logger = createLogger(); 
-const store = createStore(reducers, applyMiddleware(logger));
+const store = createStore(reducers, applyMiddleware(logger, ReduxThunk));
 
 
 ReactDOM.render(

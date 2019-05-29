@@ -1,5 +1,6 @@
 import { createAction, handleActions } from 'redux-actions'
 import { Map, List } from 'immutable';
+import { dispatch } from 'rxjs/internal/observable/pairs';
 
 // action types
 const CREATE = 'counter/CREATE';
@@ -14,6 +15,20 @@ export const remove = createAction(REMOVE);
 export const increment = createAction(INCREMENT); // index
 export const decrement = createAction(DECREMENT); // index
 export const setColor = createAction(SET_COLOR); // { index, color }
+
+export const incremnetAsync = (index) => dispatch => {
+    setTimeout(
+        () => { dispatch(increment(index)) },
+        1000
+    );
+}
+
+export const decremnetAsync = (index) => dispatch => {
+    setTimeout(
+        () => { dispatch(decrement(index)) },
+        1000
+    );
+}
 
 // initial state
 const initialState = Map({
