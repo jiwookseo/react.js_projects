@@ -4,12 +4,15 @@ class Counter extends Component {
   state = {
     value: 1
   }
+
   onIncrease = () => {
     this.setState(({value}) => ({ value: value + 1 }));
   }
+
   onDecrease = () => {
     this.setState(({value}) => ({ value: value - 1 }));
   }
+
   render() {
     const { value } = this.state;
     const { onIncrease, onDecrease } = this;
@@ -17,8 +20,8 @@ class Counter extends Component {
       <div>
         <h1>카운터</h1>
         <h2>{value}</h2>
-        <button onClick={onIncrease}>+</button>
-        <button onClick={onDecrease}>-</button>
+        <button type="button" onClick={onIncrease}>+</button>
+        <button type="button" onClick={onDecrease}>-</button>
       </div>
     );
   }
