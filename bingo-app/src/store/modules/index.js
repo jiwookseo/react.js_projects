@@ -19,11 +19,11 @@ const initialState = Map({
   gameTurn: 1,
   player1: Map({
     numbers: List(Array(25).fill(0)),
-    completed: List(Array(25).fill(false))
+    completed: List()
   }),
   player2: Map({
     numbers: List(Array(25).fill(0)),
-    completed: List(Array(25).fill(false))
+    completed: List()
   }),
   selected: List(Array(25).fill(false))
 });

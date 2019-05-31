@@ -4,21 +4,18 @@ import PropTypes from 'prop-types'
 
 
 const Bingo = ({number, onSelect, index, check}) => {
-  const bg = check ? "column is-one-fifth BingoCell button is-danger" : "column is-one-fifth BingoCell button"
+  const classNames = check ? "button is-danger" : "button"
   return (
     <button 
-      className={bg}
+      className={classNames}
       onClick={() => onSelect({number, index})}
       type="button"
-      style={{ 
-        margin: "0",
-        minHeight: "4.5rem",
-      }}
+      style={{ minHeight: "4.5rem", width: "95%", margin: "2% 5%"}}
     >
       <div
         className="is-size-5 has-text-centered has-text-weight-semibold"
       >
-        {number}
+        { number || "" }
       </div>
     </button>
   );

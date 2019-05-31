@@ -11,13 +11,18 @@ const BingoList = ({ player1, player2, onSelect, index, selected }) => {
   return (
     <div className="columns is-multiline is-mobile">
       {player.get('numbers').map((number, i) => (
-        <Bingo 
-          key={i}
-          number={number}
-          onSelect={onSelect}
-          index={index}
-          check={selected.get(number - 1)}
-        />
+        <div
+          className="column is-one-fifth"
+          style={{ padding: "0", }}
+        >
+          <Bingo 
+            key={i}
+            number={number}
+            onSelect={onSelect}
+            index={index}
+            check={selected.get(number - 1)}
+          />
+        </div>
       ))}
     </div>
   )};
@@ -34,11 +39,11 @@ BingoList.defaultProps = {
   index: 0,
   player1: Map({
     numbers: List(Array(25).fill(0)),
-    completed: List(Array(25).fill(false))
+    completed: List()
   }),
   player2: Map({
     numbers: List(Array(25).fill(0)),
-    completed: List(Array(25).fill(false))
+    completed: List()
   }),
   selected: List(Array(25).fill(false)),
   onSelect: () => console.warn('onSelect not defined'),
