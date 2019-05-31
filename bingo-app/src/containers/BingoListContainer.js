@@ -6,10 +6,12 @@ import * as actions from '../store/modules';
 const mapStateToProps = (state) => ({
     player1: state.get('player1'),
     player2: state.get('player2'),
+    gameTurn: state.get('gameTurn'),
+    selected: state.get('selected'),
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    onSelete: (number) => dispatch(actions.select(number)),
+    onSelect: ({number, index}) => dispatch(actions.select({number, index})),
 })
 
 // 데이터와 함수들이 props 로 붙은 컴포넌트 생성
