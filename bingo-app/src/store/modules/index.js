@@ -8,11 +8,13 @@ import { Map, List, fromJS } from 'immutable';
 // action types
 const START = 'bingo/START';
 const RESTART = 'bingo/RESTART';
+const END = 'bingo/END';
 const SELECT = 'bingo/SELECT';
 
 // actions
 export const start = createAction(START); // numbers1, numbers2
 export const restart = createAction(RESTART);
+export const end = createAction(END); // length1, length2
 export const select = createAction(SELECT); // number, index
 
 // initial state
@@ -36,6 +38,7 @@ export default handleActions({
     .setIn(['player1','numbers'], action.payload.numbers1)
     .setIn(['player2','numbers'], action.payload.numbers2);
   },
+  
   [RESTART]: (state, action) => {
     const init1 = Map({
       numbers: action.payload.numbers1,
@@ -50,6 +53,19 @@ export default handleActions({
       .set('player2', init2)
       .set('gameTurn', 1);
   },
+
+  [END]: (state, action) => {
+    const {length1, length2} = action.payload;
+    if (length1 > length2) {
+      alert('1P가 빙고를 완성했습니다.');
+    } else if (length1 === length2) {
+      alert('무승부입니다.');
+    } else {
+      alert('2P가 빙고를 완성했습니다.');
+    };
+    return initialState
+  },
+
   [SELECT]: (state, action) => {
     const {number, index} = action.payload;
     const s = state.get('selected').toJS()
