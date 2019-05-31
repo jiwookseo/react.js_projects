@@ -18,9 +18,10 @@ const BingoList = ({ player1, player2, onSelect, index, selected, }) => {
           <div
             className="column is-one-fifth"
             style={{ padding: "0", }}
+            key={`${index}P-${i}-column`}
           >
             <Bingo 
-              key={i}
+              key={`${index}P-${i}-bingo`}
               number={number}
               onSelect={onSelect}
               index={index}
