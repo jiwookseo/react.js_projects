@@ -1,28 +1,55 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Bingo App
 
-## Available Scripts
+React-Redux 로 만드는 2인 플레이가 가능한 간단한 빙고게임
 
-In the project directory, you can run:
+&nbsp;
 
-### `yarn start`
+## 0. 로컬 실행 방법
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`yarn` 명령어를 통해 의존성 패키지들을 설치해줍니다.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+```bash
+> yarn
+```
 
-### `yarn test`
+`yarn start` 명령어를 통해 서버를 실행해줍니다.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+> yarn start
+```
 
-### `yarn run build`
+## 1. 사용 기술 및 개발 계획
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1) 사용 기술
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+React.js 와 Redux 를 사용해 구현했습니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+State 불변성 유지를 편리하게 해주는 immutable.js
+
+Array 등의 methods 사용을 위해 underscore.js
+
+약간의 css 사용을 위한 bulma framework 를 사용했습니다.
+
+- react: 16.8.6
+- react-redux: 7.0.3
+- redux: 4.0.1
+- immutable: 4.0.0-rc.12
+- underscore: 1.9.1
+- bulma: 0.7.5
+
+&nbsp;
+
+### 2) 개발 계획
+
+- 진행 기간 : 2019.05.31 오전 10시 ~ 2019.06.01 오전 10시
+- 24 시간의 타임어택을 가지고 진행한 프로젝트
+
+&nbsp;
+
+### 스크린샷
+
+![메인 화면](./assets/1-main.png)
+
+![메인 화면 - 게임 시작](./assets/2-start.png)
+
+![진헹 과정](./assets/3-playing.png)
