@@ -6,10 +6,12 @@
     "bulma": "^0.7.5",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.3.0",
+    "immutable": "^4.0.0-rc.12",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "redux-actions": "^2.6.5"
   },
   "scripts": {
     "start": "react-scripts start",
