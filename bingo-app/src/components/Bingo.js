@@ -1,23 +1,26 @@
+/* eslint-disable no-console */
 import React from 'react';
 import PropTypes from 'prop-types'
 
 
-function Bingo({number}) {
+function Bingo({number, onSelete}) {
   return (
-    <a className="box">
-      <div className="is-size-4 has-text-centered has-text-weight-semibold">
+    <button className="column is-one-fifth box BingoCell" onClick={() => onSelete()} type="button">
+      <div className="is-size-6 has-text-centered has-text-weight-semibold">
         {number}
       </div>
-    </a>
+    </button>
   );
-}
-
-Bingo.propTypes = {
-  number: PropTypes.number.isRequired,
 };
 
-Bingo.defualtProps = {
+Bingo.propTypes = {
+  number: PropTypes.string,
+  onSelete: PropTypes.func,
+};
+
+Bingo.defaultProps = {
   number: 0,
+  onSelete: () => console.warn('onSelete not defined'),
 }
 
 export default Bingo;
