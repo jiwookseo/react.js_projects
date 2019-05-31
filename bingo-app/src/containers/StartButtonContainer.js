@@ -14,6 +14,11 @@ const mapDispatchToProps = (dispatch) => ({
         const numbers2 = getRandomNumber();
         dispatch(actions.start({numbers1, numbers2}))
     },
+    onRestart: () => {
+        const numbers1 = getRandomNumber();
+        const numbers2 = getRandomNumber();
+        dispatch(actions.restart({numbers1, numbers2}))
+    },
 })
 
 // 데이터와 함수들이 props 로 붙은 컴포넌트 생성

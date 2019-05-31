@@ -33,15 +33,18 @@ export default handleActions({
     .setIn(['player2','numbers'], action.payload.numbers2);
     // TODO: 숫자 샘플 랜덤 생성
   },
-  [RESTART]: (state) => {
-    const init = Map({
-      numbers: List([]),
+  [RESTART]: (state, action) => {
+    const init1 = Map({
+      numbers: action.payload.numbers1,
       completed: List(Array(25).fill(false))
     });
-    return state.set('gameStart', false)
-      .set('selected', )
-      .set('player1', init)
-      .set('player2', init);
+    const init2 = Map({
+      numbers: action.payload.numbers2,
+      completed: List(Array(25).fill(false))
+    });
+    return state.set('selected', List(Array(25).fill(false)))
+      .set('player1', init1)
+      .set('player2', init2);
   },
   [SELETE]: (state, action) => {
     return state.update(state.getIn(['player1','completed']),
