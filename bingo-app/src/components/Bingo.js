@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 
 const Bingo = ({number, onSelect, index, check}) => {
-  const classNames = check ? "button is-danger" : "button"
+  const classNames = check ? "button is-info" : "button"
   return (
     <button 
       className={classNames}
