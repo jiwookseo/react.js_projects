@@ -2,6 +2,7 @@ import 'bulma/css/bulma.css'
 import React from 'react';
 import BingoListContainer from '../containers/BingoListContainer'
 import StartButtonContainer from '../containers/StartButtonContainer'
+import CompletedContainer from '../containers/CompletedContainer'
 
 const App = () => (
   <div className="container">
@@ -14,10 +15,16 @@ const App = () => (
           <div className="box">
             <BingoListContainer index={1} />
           </div>
+          <div className="box">
+            <CompletedContainer index={1} />
+          </div>
         </div>
         <div className="column">
           <div className="box">
             <BingoListContainer index={2} />
+          </div>
+          <div className="box">
+            <CompletedContainer index={2} />
           </div>
         </div>
       </div>
