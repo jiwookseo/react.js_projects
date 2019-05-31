@@ -4,11 +4,11 @@ import PropTypes from 'prop-types'
 
 function Bingo({number}) {
   return (
-    <div className="">
-      <div className="">
+    <a className="box">
+      <div className="is-size-4 has-text-centered has-text-weight-semibold">
         {number}
       </div>
-    </div>
+    </a>
   );
 }
 
