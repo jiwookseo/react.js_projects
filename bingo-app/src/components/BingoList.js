@@ -6,24 +6,29 @@ import { Map, List } from "immutable";
 import Bingo from './Bingo'
 
 
-const BingoList = ({ player1, player2, onSelect, index, selected }) => {
+const BingoList = ({ player1, player2, onSelect, index, selected, }) => {
   const player = index === 1 ? player1 : player2;
   return (
-    <div className="columns is-multiline is-mobile">
-      {player.get('numbers').map((number, i) => (
-        <div
-          className="column is-one-fifth"
-          style={{ padding: "0", }}
-        >
-          <Bingo 
-            key={i}
-            number={number}
-            onSelect={onSelect}
-            index={index}
-            check={selected.get(number - 1)}
-          />
-        </div>
+    <div>
+      <div className="subtitle">
+        {index}P
+      </div>
+      <div className="columns is-multiline is-mobile">
+        {player.get('numbers').map((number, i) => (
+          <div
+            className="column is-one-fifth"
+            style={{ padding: "0", }}
+          >
+            <Bingo 
+              key={i}
+              number={number}
+              onSelect={onSelect}
+              index={index}
+              check={selected.get(number)}
+            />
+          </div>
       ))}
+      </div>
     </div>
   )};
 
@@ -45,7 +50,7 @@ BingoList.defaultProps = {
     numbers: List(Array(25).fill(0)),
     completed: List()
   }),
-  selected: List(Array(25).fill(false)),
+  selected: List(Array(26).fill(false)),
   onSelect: () => console.warn('onSelect not defined'),
 };
 

@@ -6,7 +6,6 @@ import * as actions from '../store/modules';
 const mapStateToProps = (state) => ({
     player1: state.get('player1'),
     player2: state.get('player2'),
-    gameTurn: state.get('gameTurn'),
     selected: state.get('selected'),
 });
 

@@ -10,7 +10,7 @@ const Bingo = ({number, onSelect, index, check}) => {
       className={classNames}
       onClick={() => onSelect({number, index})}
       type="button"
-      style={{ minHeight: "4.5rem", width: "95%", margin: "2% 5%"}}
+      style={{ minHeight: "5rem", height: "7vw", width: "95%", margin: "2% 5%"}}
     >
       <div
         className="is-size-5 has-text-centered has-text-weight-semibold"
